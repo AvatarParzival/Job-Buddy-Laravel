@@ -20,7 +20,7 @@ It includes authentication, role-based dashboards, job postings, applications, a
 3. [Tech Stack](#-tech-stack)  
 4. [Composer Packages](#-composer-packages)  
 5. [Demo Accounts](#-demo-accounts)  
-6. [Setup & Installation](#-setup--installation)  
+6. [Setup & Installation](#%EF%B8%8F-setup--installation)  
 7. [Database Setup](#-database-setup)  
 8. [Environment Configuration](#-environment-configuration)  
 9. [Screenshots](#-screenshots)  
@@ -107,7 +107,7 @@ It includes authentication, role-based dashboards, job postings, applications, a
 - Password: `123456`  
 
 **Job Seeker**  
-- Email: `seeker@jobportal.com`  
+- Email: `user@admin.com`  
 - Password: `123456`  
 
 ---
@@ -167,7 +167,7 @@ Now visit → [http://localhost:8000](http://localhost:8000)
 2. Place the project folder inside the `htdocs` directory (e.g., `C:/xampp/htdocs/job-portal`).  
 3. Open **phpMyAdmin** at [http://localhost/phpmyadmin](http://localhost/phpmyadmin) and create a database:  
    ```sql
-   CREATE DATABASE job_portal;
+   CREATE DATABASE laravel;
    ```
 4. Import migrations & seeders via command line:  
    ```bash
@@ -182,6 +182,13 @@ Now visit → [http://localhost:8000](http://localhost:8000)
 ---
 
 ## 🗄 Database Setup
+You have **two options** to set up the database:
+
+### 1. Using Laravel Migrations & Seeders (recommended)
+```bash
+php artisan migrate --seed
+```
+This will create all tables and insert demo users, jobs, categories, and skills.
 
 Tables include:  
 - **users** (with roles: admin, employer, seeker)  
@@ -192,7 +199,25 @@ Tables include:
 Seeders included:  
 - `UserSeeder` → Creates demo users (admin, employer, seeker)  
 - `JobSeeder` → Inserts sample jobs  
-- `SkillSeeder`, `CategorySeeder`, `ProfileSeeder` → Populate initial data  
+- `SkillSeeder`, `CategorySeeder`, `ProfileSeeder` → Populate initial data
+- 
+### 2. Importing Provided SQL File
+Use the pre-built `laravel.sql` file:
+1. Open **phpMyAdmin** or your MySQL client.  
+2. Create a new database:
+   ```sql
+   CREATE DATABASE laravel;
+   ```
+3. Import the file:
+   ```bash
+   mysql -u root -p laravel < laravel.sql
+   ```
+4. Update your `.env` file to match:
+   ```env
+   DB_DATABASE=laravel
+   DB_USERNAME=root
+   DB_PASSWORD=
+   ```
 
 ---
 
