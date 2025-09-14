@@ -99,16 +99,16 @@ It includes authentication, role-based dashboards, job postings, applications, a
 ## 👤 Demo Accounts
 
 **Admin**  
-- Email: `admin@jobportal.com`  
-- Password: `admin123`  
+- Email: `admin@gmail.com`  
+- Password: `123456`  
 
 **Super Admin**  
-- Email: `employer@jobportal.com`  
-- Password: `employer123`  
+- Email: `super@gmail.com`  
+- Password: `123456`  
 
 **Job Seeker**  
 - Email: `seeker@jobportal.com`  
-- Password: `seeker123`  
+- Password: `123456`  
 
 ---
 
@@ -116,7 +116,7 @@ It includes authentication, role-based dashboards, job postings, applications, a
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/your-username/job-portal.git
+git clone https://github.com/AvatarParzival/Job-Buddy-Laravel.git
 cd job-portal
 ```
 
